@@ -1,0 +1,82 @@
+<head>
+    <title> B2S - Login/Register </title>
+    <link rel="icon" href="{{url_for('static', filename='src/b2s.jpg')}}" type="image/x-icon">
+    <link href="{{url_for('static', filename='css/main.css')}}" rel="stylesheet" type="text/css">
+</head>
+<body>
+<div class="hero">
+    <div class = "navbar">
+        <style>
+            input::-webkit-outer-spin-button,
+            input::-webkit-inner-spin-button {
+                -webkit-appearance: none;
+                margin: 0;
+            }
+
+            input[type=number] {
+                -moz-appearance: textfield;
+            }
+        </style>
+        <nav>
+            <ul id="MenuItems">
+                <li><a href="/">Home</a></li>
+                <li><a href="about">About Us</a></li>
+                <li><a href="contact">Contact Us</a></li>
+                <li><a href="seller">Want to sell?</a></li>
+            </ul>
+        </nav>
+    </div>
+    <h1 style="text-align:center;" class = "header">
+        Welcome to Buyer 2 Seller!
+    </h1>
+    <div class="form-box">
+        <div class="options">
+            <div id="btn"></div>
+            <button type="button" class="toggle-btn" onclick="login()"> Login </button>
+            <button type="button" class="toggle-btn" onclick="register()"> Register </button>
+        </div>
+        <form method="post" action="/login" class="input-grp" id="login" autocomplete="off">
+            <input style="text-align:center;" class="input" type="text"  placeholder="Enter Name" 
+            name="username" required/>
+            <br>
+            <input style="text-align:center;" class="input" type="password"
+            placeholder="Enter Password" name="password" required/>
+            <br>
+            <input type="checkbox" class="check"><span> Remember Password</span>
+            <input class="summit" type="submit"/>
+        </form>
+        <form class="input-grp" method="post" action="/login" id="register" autocomplete="off">
+            <input style="text-align:center;" class="input" type="text"  placeholder="Enter Name"
+            name="username" required/>
+            <br>
+            <input style="text-align:center;" class="input" type="email"
+            placeholder="Enter Email ID" name="email" required/>
+            <br>
+            <input style="text-align:center;" class="input" type="number"
+            placeholder="Enter Pincode" name="pin"/>
+            <br>
+            <input style="text-align:center;" class="input" type="password"
+            placeholder="Enter Password" name="password" required/>
+            <br>
+            <input class="summit" type="submit"/>
+        </form>
+    </div>
+</div>
+<script>
+    var x = document.getElementById("login")
+    var y = document.getElementById("register")
+    var z = document.getElementById("btn")
+
+    login();
+    function register(){
+        x.style.display = "none";
+        y.style.display = "block";
+        z.style.left = "110px";
+    }
+    function login(){
+        x.style.display = "block";
+        y.style.display = "none";
+        z.style.left = "0px";
+    }
+</script>
+</body>

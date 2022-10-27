@@ -1,0 +1,48 @@
+<head>
+    <title> B2S - Seller Registration </title>
+    <link rel="icon" href="{{url_for('static', filename='src/b2s.jpg')}}" type="image/x-icon">
+    <link href="{{url_for('static', filename='css/main.css')}}" rel="stylesheet" type="text/css">
+</head>
+<body>
+<div class="hero">
+    <div class = "navbar">
+        <nav>
+            <ul id="MenuItems">
+                <li><a href="/">Home</a></li>
+                <li><a href="about">About Us</a></li>
+                <li><a href="contact">Contact Us</a></li>
+            </ul>
+        </nav>
+    </div>
+    <h1 style="text-align:center;" class = "header">
+        Welcome to Buyer 2 Seller!
+    </h1>
+    <div class="form-box">
+        <style>
+            input::-webkit-outer-spin-button,
+            input::-webkit-inner-spin-button {
+                -webkit-appearance: none;
+                margin: 0;
+            }
+
+            input[type=number] {
+                -moz-appearance: textfield;
+            }
+        </style>
+        <form class="input-grp" method="post" action="/seller" id="register" autocomplete="off">
+            <input style="text-align:center;" class="input" type="text"  placeholder="Enter Name"  name="username" required/>
+            <br>
+            <input style="text-align:center;" class="input" type="email" placeholder="Enter Email ID" name="email" required/>
+            <br>
+            <input style="text-align:center;" class="input" type="number" placeholder="Enter Contact no." name="phone" required/>
+            <br>
+            <input style="text-align:center;" class="input" type="text" placeholder="Enter Address 1" name="addr1" required/>
+            <br>
+            <input style="text-align:center;" class="input" type="text" placeholder="Enter Address 2" name="addr2"/>
+            <br>
+            <input style="text-align:center;" class="input" type="password" placeholder="Enter Password" name="password" required/>
+            <br>
+            <input class="summit" type="submit"/>
+        </form>
+    </div>
+</div>
